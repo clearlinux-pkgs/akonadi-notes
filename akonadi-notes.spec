@@ -6,7 +6,7 @@
 #
 Name     : akonadi-notes
 Version  : 19.08.0
-Release  : 10
+Release  : 11
 URL      : https://download.kde.org/stable/applications/19.08.0/src/akonadi-notes-19.08.0.tar.xz
 Source0  : https://download.kde.org/stable/applications/19.08.0/src/akonadi-notes-19.08.0.tar.xz
 Source1 : https://download.kde.org/stable/applications/19.08.0/src/akonadi-notes-19.08.0.tar.xz.sig
@@ -74,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565918169
+export SOURCE_DATE_EPOCH=1565921489
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -91,7 +91,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565918169
+export SOURCE_DATE_EPOCH=1565921489
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/akonadi-notes
 cp COPYING %{buildroot}/usr/share/package-licenses/akonadi-notes/COPYING
