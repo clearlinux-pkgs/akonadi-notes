@@ -6,7 +6,7 @@
 #
 Name     : akonadi-notes
 Version  : 19.08.3
-Release  : 14
+Release  : 15
 URL      : https://download.kde.org/stable/applications/19.08.3/src/akonadi-notes-19.08.3.tar.xz
 Source0  : https://download.kde.org/stable/applications/19.08.3/src/akonadi-notes-19.08.3.tar.xz
 Source1 : https://download.kde.org/stable/applications/19.08.3/src/akonadi-notes-19.08.3.tar.xz.sig
