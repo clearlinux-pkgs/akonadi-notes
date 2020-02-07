@@ -5,19 +5,17 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : akonadi-notes
-Version  : 19.12.1
-Release  : 17
-URL      : https://download.kde.org/stable/release-service/19.12.1/src/akonadi-notes-19.12.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/19.12.1/src/akonadi-notes-19.12.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/19.12.1/src/akonadi-notes-19.12.1.tar.xz.sig
+Version  : 19.12.2
+Release  : 18
+URL      : https://download.kde.org/stable/release-service/19.12.2/src/akonadi-notes-19.12.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/19.12.2/src/akonadi-notes-19.12.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/19.12.2/src/akonadi-notes-19.12.2.tar.xz.sig
 Summary  : Libraries and daemons to implement management of notes in Akonadi
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-2.0 LGPL-2.1
 Requires: akonadi-notes-lib = %{version}-%{release}
 Requires: akonadi-notes-license = %{version}-%{release}
 Requires: akonadi-notes-locales = %{version}-%{release}
-BuildRequires : akonadi-dev
-BuildRequires : boost-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : kmime-dev
@@ -67,15 +65,15 @@ locales components for the akonadi-notes package.
 
 
 %prep
-%setup -q -n akonadi-notes-19.12.1
-cd %{_builddir}/akonadi-notes-19.12.1
+%setup -q -n akonadi-notes-19.12.2
+cd %{_builddir}/akonadi-notes-19.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578621872
+export SOURCE_DATE_EPOCH=1581045394
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -92,12 +90,12 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578621872
+export SOURCE_DATE_EPOCH=1581045394
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/akonadi-notes
-cp %{_builddir}/akonadi-notes-19.12.1/COPYING %{buildroot}/usr/share/package-licenses/akonadi-notes/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/akonadi-notes-19.12.1/COPYING.BSD %{buildroot}/usr/share/package-licenses/akonadi-notes/d0f83c8198fdd5464d2373015b7b64ce7cae607e
-cp %{_builddir}/akonadi-notes-19.12.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/akonadi-notes/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/akonadi-notes-19.12.2/COPYING %{buildroot}/usr/share/package-licenses/akonadi-notes/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/akonadi-notes-19.12.2/COPYING.BSD %{buildroot}/usr/share/package-licenses/akonadi-notes/d0f83c8198fdd5464d2373015b7b64ce7cae607e
+cp %{_builddir}/akonadi-notes-19.12.2/COPYING.LIB %{buildroot}/usr/share/package-licenses/akonadi-notes/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -123,7 +121,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5AkonadiNotes.so.5
-/usr/lib64/libKF5AkonadiNotes.so.5.13.1
+/usr/lib64/libKF5AkonadiNotes.so.5.13.2
 
 %files license
 %defattr(0644,root,root,0755)
