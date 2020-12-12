@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : akonadi-notes
-Version  : 20.08.3
-Release  : 25
-URL      : https://download.kde.org/stable/release-service/20.08.3/src/akonadi-notes-20.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.08.3/src/akonadi-notes-20.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.08.3/src/akonadi-notes-20.08.3.tar.xz.sig
+Version  : 20.12.0
+Release  : 26
+URL      : https://download.kde.org/stable/release-service/20.12.0/src/akonadi-notes-20.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.12.0/src/akonadi-notes-20.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.12.0/src/akonadi-notes-20.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.0
@@ -67,15 +67,15 @@ locales components for the akonadi-notes package.
 
 
 %prep
-%setup -q -n akonadi-notes-20.08.3
-cd %{_builddir}/akonadi-notes-20.08.3
+%setup -q -n akonadi-notes-20.12.0
+cd %{_builddir}/akonadi-notes-20.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604608803
+export SOURCE_DATE_EPOCH=1607737857
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -91,10 +91,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1604608803
+export SOURCE_DATE_EPOCH=1607737857
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/akonadi-notes
-cp %{_builddir}/akonadi-notes-20.08.3/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/akonadi-notes/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/akonadi-notes-20.12.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/akonadi-notes/20079e8f79713dce80ab09774505773c926afa2a
 pushd clr-build
 %make_install
 popd
@@ -120,7 +120,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5AkonadiNotes.so.5
-/usr/lib64/libKF5AkonadiNotes.so.5.15.3
+/usr/lib64/libKF5AkonadiNotes.so.5.16.0
 
 %files license
 %defattr(0644,root,root,0755)
