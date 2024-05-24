@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : akonadi-notes
-Version  : 24.02.2
-Release  : 67
-URL      : https://download.kde.org/stable/release-service/24.02.2/src/akonadi-notes-24.02.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/24.02.2/src/akonadi-notes-24.02.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/24.02.2/src/akonadi-notes-24.02.2.tar.xz.sig
+Version  : 24.05.0
+Release  : 68
+URL      : https://download.kde.org/stable/release-service/24.05.0/src/akonadi-notes-24.05.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/24.05.0/src/akonadi-notes-24.05.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/24.05.0/src/akonadi-notes-24.05.0.tar.xz.sig
 Source2  : BB463350D6EF31EF.pkey
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -79,15 +79,15 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) BB463350D6EF31EF' gpg.status
-%setup -q -n akonadi-notes-24.02.2
-cd %{_builddir}/akonadi-notes-24.02.2
+%setup -q -n akonadi-notes-24.05.0
+cd %{_builddir}/akonadi-notes-24.05.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713219005
+export SOURCE_DATE_EPOCH=1716571919
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -148,7 +148,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713219005
+export SOURCE_DATE_EPOCH=1716571919
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/akonadi-notes
 cp %{_builddir}/akonadi-notes-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/akonadi-notes/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
@@ -186,9 +186,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKPim6AkonadiNotes.so.6.0.2
+/V3/usr/lib64/libKPim6AkonadiNotes.so.6.1.0
 /usr/lib64/libKPim6AkonadiNotes.so.6
-/usr/lib64/libKPim6AkonadiNotes.so.6.0.2
+/usr/lib64/libKPim6AkonadiNotes.so.6.1.0
 
 %files license
 %defattr(0644,root,root,0755)
